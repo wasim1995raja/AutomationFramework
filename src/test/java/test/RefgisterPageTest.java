@@ -122,7 +122,7 @@ public class RefgisterPageTest extends BaseClass {
 		
 		
 	
-		driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().description(\"Select an option\").instance(0))");
+		//driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().description(\"Select an option\").instance(0))");
 		driver.findElement(By.xpath("(//android.widget.Button[@content-desc=\"Select an option\"])[1]")).click();
 		driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().description(\"PATNA\"))").click();
 		
