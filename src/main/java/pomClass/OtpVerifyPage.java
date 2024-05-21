@@ -37,15 +37,15 @@ public class OtpVerifyPage {
 		return otpHeader.getText().trim();
 	}
 	
-	public String getEnterOtpMessage()
-	{
-		return enterOtpMessage.getText().trim();
-	}
-	
-	public void enterOtpInBox(String otp)
-	{
-		otpBoxField.sendKeys(otp);
-	}
+//	public String getEnterOtpMessage()
+//	{
+//		return enterOtpMessage.getText().trim();
+//	}
+//	
+//	public void enterOtpInBox(String otp)
+//	{
+//		otpBoxField.sendKeys(otp);
+//	}
 	
 	public void getOtpNotReceivedMsg()
 	{
