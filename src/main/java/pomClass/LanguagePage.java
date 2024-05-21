@@ -11,7 +11,7 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 public class LanguagePage {
 
-	//AndroidDriver<WebElement> driver;
+	AndroidDriver<AndroidElement> driver;
 	
 	
 
@@ -43,7 +43,7 @@ public class LanguagePage {
 
 
 
-	public LanguagePage(AndroidDriver<WebElement> driver) {
+	public LanguagePage(AndroidDriver<AndroidElement> driver) {
 		PageFactory.initElements(driver, this);
 	}
 
@@ -57,7 +57,7 @@ public class LanguagePage {
 		return chooseEnglishTitle.getText().trim();
 	}
 
-	public void selectHindiLanguage() {
+	public void clickHindiLanguage() {
 		hindiLanguage.click();
 		
 	}
@@ -65,7 +65,7 @@ public class LanguagePage {
 		return chooseHindiTitle.getText();
 	}
 	
-	public void selectEnglishLaguage()
+	public void clickEnglishLaguage()
 	{
 		
 		englishLanguage.click();

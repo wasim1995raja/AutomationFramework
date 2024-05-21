@@ -93,39 +93,69 @@ public class LoginTest {
 	
 	AndroidElement day=(AndroidElement)driver.findElement(By.xpath("(//android.widget.Button)[3]"));
 	day.click();
-//	String setDay="22";
-//	WebElement dateClick= driver.findElementByAccessibilityId(setDay);
-	//String s=dateClick.getText();
 	
 	driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().description(\"22\"))").click();
 	
-	//driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().description(\"22\"));");
-	//dateClick.click();
 	
 	
 	
-//	((JavascriptExecutor)driver).executeScript("mobile: scrollGesture", ImmutableMap.of("elementId",((RemoteWebElement)dateClick),"duration", 2000));
-//	dateClick.click();
-//	
-////	AndroidDriver<AndroidElement> androidDriver = (AndroidDriver<AndroidElement>) driver;
-////	String scrollableListContainer = "new UiScrollable(new UiSelector().scrollable(true))";
-////	String uiSelectorForYear = ".scrollIntoView(new UiSelector().text(\"22\"))";
-////	
-////	String scrollableCommand = scrollableListContainer + uiSelectorForYear;
-////	
-////	
-////	androidDriver.findElementByAndroidUIAutomator(scrollableCommand);
-//	driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\"22\"))").click();
-	
+
 	AndroidElement year=(AndroidElement)driver.findElement(By.xpath("(//android.widget.Button)[4]"));
 	year.click();
-//	String setYear="1995";
-//	driver.findElementByAccessibilityId(setYear).click();
+
 	driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().description(\"1995\"))").click();
 
 	
+	driver.findElement(By.xpath("(//android.view.View[@content-desc='Select an option'])[1]")).click();
+	//x=//android.view.View[@content-desc="Male"]
+	driver.findElement(By.xpath("//android.view.View[@content-desc=\"Male\"]")).click();
+	
+	//webelement female=driver.findElement(By.xpath("//android.view.View[@content-desc=\"Female\"]")).click();
+	//webelement male=driver.findElement(By.xpath("//android.view.View[@content-desc=\"Other\"]")).click();
 	
 	
+	
+	//farmer type
+			//driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().description(\"Farmer's type *\"))");
+//			driver.findElement(By.xpath("//android.widget.ScrollView/android.view.View/android.view.View[6]/android.widget.Button")).click();
+//			driver.findElement(By.xpath("//android.view.View[@content-desc=\"Small Farmer\"]")).click();
+			//dist
+			driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().description(\"District *\"))");
+
+			driver.findElement(By.xpath("(//android.widget.Button[@content-desc=\"Select an option\"])[1]")).click();
+			driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).scrollIntoView(new UiSelector().description(\"PATNA\"))").click();
+			
+			//block
+			//uiautomator new UiSelector().description("Select an option").instance(0)
+			//driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().description(\"Block *\"))");
+
+			driver.findElement(By.xpath("(//android.widget.Button[@content-desc=\"Select an option\"])[1]")).click();
+			driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).scrollIntoView(new UiSelector().description(\"MOKAMA\"))").click();
+			
+			//vill panchayta
+			//driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().description(\"Block *\"))");
+
+			driver.findElement(By.xpath("(//android.widget.Button[@content-desc=\"Select an option\"])[3]")).click();
+			driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).scrollIntoView(new UiSelector().description(\"SHIV NAGAR\"))").click();
+			
+			//village
+			//driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().description(\"Village *\"))");
+
+			driver.findElement(By.xpath("(//android.widget.Button[@content-desc=\"Select an option\"])[4]")).click();
+			driver.findElement(By.xpath("//android.view.View[@content-desc=\"Jazira Mokama\"]")).click();
+			
+			//pincode
+			//driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().description(\"Pin Code\"))");
+
+			AndroidElement pin= (AndroidElement) driver.findElement(By.xpath("//android.widget.EditText"));
+			pin.click();
+			pin.sendKeys("132456");
+			driver.hideKeyboard();
+			driver.findElementByAccessibilityId("Continue").click();
+			
+			String s=driver.findElementByAccessibilityId("Your profile is created successfully").getText();
+			System.out.println(s);
+			
 	
 
 	}

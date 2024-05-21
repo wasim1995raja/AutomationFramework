@@ -25,7 +25,7 @@ public class LoginAndSignUpPage {
 	private WebElement nextButton;
 	
 	@AndroidBy (accessibility = "No")
-	private WebElement dbtPopUpMessage;
+	private WebElement nonDbtFlow;
 	
 	
 	public LoginAndSignUpPage(AndroidDriver<WebElement> driver )
@@ -56,16 +56,12 @@ public class LoginAndSignUpPage {
 		nextButton.click();
 	}
 	
-	public void setDBTPopUP(String yes)
+	public void clickNonDBTFlow()
+	
 	{
-		if(dbtPopUpMessage.getText().contains(yes))
-		{
-			dbtPopUpMessage.click();
-		}
-		else
-		{
-			dbtPopUpMessage.click();
-		}
+		nonDbtFlow.click();
+		nonDbtFlow.click();
+		
 	}
 
 }

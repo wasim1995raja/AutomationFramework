@@ -14,11 +14,6 @@ public class OtpVerifyPage {
 	@AndroidFindBy (accessibility = "Please verify your O.T.P.")
 	private WebElement otpHeader;
 	
-	@AndroidFindBy (accessibility = "Please enter the O.T.P. sent to this mobile number")
-	private WebElement enterOtpMessage;
-	
-	@AndroidFindBy (uiAutomator = "new UiSelector().className('android.view.View').instance(7)")
-	private WebElement otpBoxField;
 	
 	@AndroidFindBy (accessibility = "O.T.P. not received")
 	private WebElement otpNotReceivedMeassage;
@@ -33,6 +28,7 @@ public class OtpVerifyPage {
 	public OtpVerifyPage(AndroidDriver<WebElement> driver)
 	{
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
+		
 		
 	}
 	
