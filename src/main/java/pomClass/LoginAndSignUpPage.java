@@ -1,42 +1,42 @@
 package pomClass;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.AndroidElement;
-import io.appium.java_client.pagefactory.AndroidBy;
-import io.appium.java_client.pagefactory.AndroidFindBy;
-import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 public class LoginAndSignUpPage {
 	AndroidDriver<WebElement>driver;
 	
-	@AndroidFindBy (accessibility = "Login | Sign Up")
-	private WebElement loginAndSignUpHeader;
+//	@FindBy (accessibility = "Login | Sign Up")
+//	private WebElement loginAndSignUpHeader;
 	
-	@AndroidFindBy (accessibility = "Mobile number")
+	
+	
+	@FindBy (xpath = "//android.view.View[@content-desc=\"Mobile number\"]")
 	private WebElement mobileNumberHeader;
 	
-	@AndroidFindBy (xpath = "//android.widget.EditText")
+	@FindBy (xpath = "//android.widget.EditText")
 	private WebElement mobileNumberInputBox;
 	
-	@AndroidFindBy (accessibility = "Next")
+	@FindBy (xpath = "//android.view.View[@content-desc=\"Next\"]")
 	private WebElement nextButton;
 	
-	@AndroidBy (accessibility = "No")
+	@FindBy (xpath = "//android.view.View[@content-desc=\"No\"]")
 	private WebElement nonDbtFlow;
 	
 	
 	public LoginAndSignUpPage(AndroidDriver<WebElement> driver )
 	{
+		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
 	
-	public String getLoginAndSignUpHeader()
-	{
-		return loginAndSignUpHeader.getText().trim();
-	}
+//	public String getLoginAndSignUpHeader()
+//	{
+//		return loginAndSignUpHeader.getText().trim();
+//	}
 	
 	public String getmobileNumberHeader()
 	{
@@ -46,7 +46,7 @@ public class LoginAndSignUpPage {
 	public void setmobileNumber(String enterMobileNumber)
 	{
 		mobileNumberInputBox.click();
-		mobileNumberHeader.sendKeys(enterMobileNumber);
+		mobileNumberInputBox.sendKeys(enterMobileNumber);
 		driver.hideKeyboard();
 		
 	}

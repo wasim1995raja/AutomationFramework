@@ -15,7 +15,7 @@ import io.appium.java_client.remote.MobileCapabilityType;
 
 public class BaseClass {
 
-	public AndroidDriver  <WebElement> driver;
+	public AndroidDriver  <AndroidElement> driver;
 	@BeforeClass
 	public void classConfiguration()
 	{
