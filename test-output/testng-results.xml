@@ -2,20 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-05-21T17:59:59Z" name="Default suite" finished-at="2024-05-21T18:01:35Z" duration-ms="95915">
+  <suite started-at="2024-05-22T17:42:34Z" name="Default suite" finished-at="2024-05-22T17:43:34Z" duration-ms="60345">
     <groups>
     </groups>
-    <test started-at="2024-05-21T17:59:59Z" name="Default test" finished-at="2024-05-21T18:01:35Z" duration-ms="95915">
-      <class name="test.RefgisterPageTest">
-        <test-method is-config="true" signature="classConfiguration()[pri:0, instance:test.RefgisterPageTest@1e8b7643]" started-at="2024-05-21T17:59:59Z" name="classConfiguration" finished-at="2024-05-21T18:00:15Z" duration-ms="16387" status="PASS">
+    <test started-at="2024-05-22T17:42:34Z" name="Default test" finished-at="2024-05-22T17:43:34Z" duration-ms="60345">
+      <class name="test.RegisterTestPomImplementation">
+        <test-method signature="HomePageTest()[pri:0, instance:test.RegisterTestPomImplementation@73302995]" started-at="2024-05-22T17:42:34Z" name="HomePageTest" finished-at="2024-05-22T17:43:34Z" duration-ms="60312" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- classConfiguration -->
-        <test-method signature="test1()[pri:0, instance:test.RefgisterPageTest@1e8b7643]" started-at="2024-05-21T18:00:15Z" name="test1" finished-at="2024-05-21T18:01:35Z" duration-ms="79501" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test1 -->
-      </class> <!-- test.RefgisterPageTest -->
+        </test-method> <!-- HomePageTest -->
+      </class> <!-- test.RegisterTestPomImplementation -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

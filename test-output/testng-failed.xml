@@ -3,12 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="test.RefgisterPageTest">
+      <class name="test.RegisterTestPomImplementation">
         <methods>
-          <include name="classConfiguration"/>
-          <include name="test1"/>
+          <include name="HomePageTest"/>
         </methods>
-      </class> <!-- test.RefgisterPageTest -->
+      </class> <!-- test.RegisterTestPomImplementation -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
