@@ -1,5 +1,6 @@
 package pomClass;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -14,7 +15,7 @@ public class RegestrationPage {
 	 */
 	AndroidDriver<WebElement> driver;;
 
-	@FindBy(xpath = "//android.widget.ScrollView/android.view.View/android.widget.EditText[1]")
+	@FindBy(xpath = "(//android.view.View/android.widget.EditText)[1]")
 	private WebElement farmersNameTextField;
 
 	@FindBy(xpath = "(//android.widget.EditText)[2]")
@@ -40,8 +41,8 @@ public class RegestrationPage {
 	@FindBy(xpath = "//android.view.View[@content-desc=\"Other\"]")
 	private WebElement othersTitle;
 
-	@FindBy(xpath = "(//android.widget.Button)[1]")
-	private WebElement farmersCategoryDropdown;
+//	@FindBy(xpath = "")
+//	private WebElement farmersCategoryDropdown;
 
 	@FindBy(xpath = "//android.view.View[@content-desc=\"Own\"]")
 	private WebElement ownTitle;
@@ -52,8 +53,8 @@ public class RegestrationPage {
 	@FindBy(xpath = "//android.view.View[@content-desc=\"Own Land + Rented Land\"]")
 	private WebElement ownRentedTitle;
 
-	@FindBy(xpath = "(//android.widget.Button)[2]")
-	private WebElement casteCatogryDropdown;
+//	@FindBy(xpath = "(//android.view.View[@content-desc=\"Select an option\"])[2]/android.widget.Button")
+//	private WebElement casteCatogryDropdown;
 
 	@FindBy(xpath = "//android.view.View[@content-desc=\"Minority\"]")
 	private WebElement minorityTitle;
@@ -82,7 +83,7 @@ public class RegestrationPage {
 	@FindBy(xpath = "//android.view.View[@content-desc=\"Continue\"]")
 	private WebElement continueButtton;
 
-	@FindBy(xpath = "//android.view.View[@content-desc=\"Your profile is created successfully\"]")
+	@FindBy(xpath = "(//android.view.View)[3]")
 	private WebElement profileCreatedSuccessfullyTitle;
 
 	@FindBy(xpath = "//android.view.View[@content-desc=\"Welcome to Bihar Krishi App\"]")
@@ -161,5 +162,120 @@ public class RegestrationPage {
 		}
 
 	}
+	public void setfarmerCategory(String category)
+	{
+		driver.findElementByAndroidUIAutomator("new UiSelector().className(\"android.widget.Button\").instance(4)").click();
+		switch (category) {
+		case "Own":
+			ownTitle.click();
+
+			break;
+		case "Rented":
+			rentedTitle.click();
+
+			break;
+		case "OwnRented":
+			ownRentedTitle.click();
+
+			break;
+
+		default:
+			System.out.println("invalid category");
+			break;
+		}
+	}
+	
+	public void setCastCategory(String category)
+	{
+		driver.findElementByAndroidUIAutomator("new UiSelector().className(\"android.widget.Button\").instance(5)").click();
+		switch (category) {
+		case "Minority":
+			minorityTitle.click();
+
+			break;
+		case "SC":
+			rentedTitle.click();
+
+			break;
+		case "ST":
+			ownRentedTitle.click();
+
+			break;
+
+		default:
+			System.out.println("invalid category");
+			break;
+		}
+	}
+	
+	public void setFarmerType(String type)
+	{
+		famersTypeDropdown.click();
+		switch (type) {
+		case "Small":
+			smallFarmerTitle.click();
+
+			break;
+		case "SC":
+			rentedTitle.click();
+
+			break;
+		case "ST":
+			ownRentedTitle.click();
+
+			break;
+
+		default:
+			System.out.println("invalid farmer type");
+			break;
+		}
+		
+	}
+	
+	public void setDistrict(String district)
+	{
+		districtDropdown.click();
+		driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().description(\""+district+"\"))").click();
+	}
+	public void setBlock(String block)
+	{
+		blockDropdown.click();
+		driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().description(\""+block+"\"))").click();
+	}
+	
+	public void setVillagePanchayat(String panchayat)
+	{
+		villagePanchaytDropdown.click();
+		driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().description(\""+panchayat+"\"))").click();
+	}
+	public void setVillage(String village)
+	{
+		villageDropdown.click();
+		driver.findElement(By.xpath("//android.view.View[@content-desc=\""+village+"\"]")).click();
+	}
+	
+	public void setPincode(String pincode)
+	{
+		pincodeTextField.click();
+		pincodeTextField.sendKeys(pincode);
+		driver.hideKeyboard();
+	}
+	public void clickContinue()
+	{
+		continueButtton.click();
+				
+	}
+	public String getSuccessfullyMessage()
+	{
+		return 
+		profileCreatedSuccessfullyTitle.getText().trim();
+		
+	}
+	public String gethomePageTitle()
+	{
+		return homePageTitle.getText().trim();
+	}
+	
+	
 
 }

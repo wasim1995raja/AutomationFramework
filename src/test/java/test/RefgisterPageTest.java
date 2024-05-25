@@ -11,6 +11,7 @@ import com.google.common.collect.ImmutableMap;
 
 import genericLibrary.BaseClass;
 import io.appium.java_client.android.AndroidElement;
+import io.appium.java_client.pagefactory.bys.builder.AppiumByBuilder;
 
 public class RefgisterPageTest extends BaseClass {
 	
@@ -84,8 +85,8 @@ public class RefgisterPageTest extends BaseClass {
 		
 		//farm cat
 		//driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().className(\"android.view.View\").instance(16))");
-		//driver.findElementByAndroidUIAutomator("new UiSelector().className(\"android.widget.Button\").instance(4)").click();
-		driver.findElement(By.xpath("(//android.widget.Button)[1]")).click();
+		driver.findElementByAndroidUIAutomator("new UiSelector().className(\"android.widget.Button\").instance(4)").click();
+		//driver.findElement(By.xpath("(//android.widget.Button)[1]")).click();
 		driver.findElement(By.xpath("//android.view.View[@content-desc=\"Own\"]")).click();
 		
 		//driver.findElement(By.xpath("//android.view.View[@content-desc=\"Rented\"]")).click();
@@ -95,8 +96,8 @@ public class RefgisterPageTest extends BaseClass {
 		//driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().description(\"Farmer's type *\"))");
 
 		//driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().description(\"Caste category *\"))");
-		//driver.findElement(By.xpath("//android.view.View[@content-desc=\"Select an option\"]/android.widget.Button")).click();
-		driver.findElement(By.xpath("(//android.widget.Button)[2]")).click();
+		driver.findElement(By.xpath("//android.view.View[@content-desc=\"Select an option\"]/android.widget.Button")).click();
+		//driver.findElement(By.xpath("(//android.widget.Button)[2]")).click();
 		driver.findElement(By.xpath("//android.view.View[@content-desc=\"Minority\"]")).click();
 		
 		//driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(description(\"Farmer's type *\"));");

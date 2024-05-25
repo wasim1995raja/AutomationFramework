@@ -15,7 +15,7 @@ import io.appium.java_client.remote.MobileCapabilityType;
 
 public class BaseClass {
 
-	public AndroidDriver  <AndroidElement> driver;
+	public AndroidDriver  <WebElement> driver;
 	@BeforeClass
 	public void classConfiguration()
 	{
@@ -36,10 +36,9 @@ public class BaseClass {
 			e.printStackTrace();
 		}
 
-		driver = new AndroidDriver(url, cap);
+		driver = new AndroidDriver<WebElement>(url, cap);
 		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
-		//driver.findElementByAccessibilityId("English (A)").click();
-		//driver.findElementByAccessibilityId("Next").click();
+		
 	}
 	
 //	@AfterClass

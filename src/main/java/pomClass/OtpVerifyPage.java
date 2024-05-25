@@ -1,5 +1,7 @@
 package pomClass;
 
+import java.io.IOException;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -11,21 +13,9 @@ public class OtpVerifyPage {
 	
 	AndroidDriver<WebElement>driver;
 	
-//	@FindBy (accessibility = "Please verify your O.T.P.")
-//	private WebElement otpHeader;
-//	
-//	
-//	@FindBy (accessibility = "O.T.P. not received")
-//	private WebElement otpNotReceivedMeassage;
-//	
-//	@FindBy (accessibility ="Resend O.T.P." )
-//	private WebElement resendOtpFeature;
 	
 	@FindBy (xpath = "//android.view.View[@content-desc=\"Verify\"]")
 	private WebElement verifyButton;
-	
-	@FindBy(xpath = "(//android.widget.EditText)[1]")
-	private WebElement otpBox;
 	
 	
 	public OtpVerifyPage(AndroidDriver<WebElement> driver)
@@ -35,37 +25,36 @@ public class OtpVerifyPage {
 		
 	}
 	
-//	public String getOtpHeader()
-//	{
-//		return otpHeader.getText().trim();
-//	}
 	
-//	public String getEnterOtpMessage()
-//	{
-//		return enterOtpMessage.getText().trim();
-//	}
-//	
-//	public void enterOtpInBox(String otp)
-//	{
-//		otpBoxField.sendKeys(otp);
-//	}
+	public void keypressNumber(String number) throws IOException, InterruptedException {
+		try {
+			int[] keyCodes = {7, 8, 9, 10, 11, 12, 13, 14, 15, 16}; // Key codes for digits 0 to 9
+
+            // Loop through each character in the OTP and input it
+            for (char digit : number.toCharArray()) {
+            	Thread.sleep(500);
+                int index = Character.getNumericValue(digit); // Get the numeric value of the digit
+                if (index >= 0 && index < keyCodes.length) {
+                    int keyCode = keyCodes[index];
+                    String command = "adb shell input keyevent " + keyCode;
+                    Runtime.getRuntime().exec(command);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 	
-//	public void getOtpNotReceivedMsg()
-//	{
-//		otpNotReceivedMeassage.getText().trim();
-//	}
-//	
-//	public void clickResendOtpFeature()
-//	{
-//		resendOtpFeature.click();
-//	}
+			
+		
+		
+	}
 	
-	public void setOtp(String otp)
+	public void clickVerifyButton()
 	{
-		otpBox.sendKeys(otp);
-		driver.hideKeyboard();
 		verifyButton.click();
 	}
+	
+	
 	
 	
 
