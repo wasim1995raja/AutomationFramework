@@ -5,6 +5,7 @@
     <classes>
       <class name="test.RegisterTestPomImplementation">
         <methods>
+          <include name="classConfiguration"/>
           <include name="HomePageTest"/>
         </methods>
       </class> <!-- test.RegisterTestPomImplementation -->
